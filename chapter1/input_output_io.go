@@ -115,3 +115,26 @@ package main
 // 	if err != nil { /*エラー処理*/ }
 // 	fmt.Printf("%x/n", h.Sum(nil))
 // }
+
+// io.Copyを使って、ファイルをコピー
+// func main() {
+// 	f, err := os.Open("sample.txt")
+// 	if err != nil { /*エラー処理*/ }
+// 	defer f.Close()
+// 	h := sha256.New()
+// 	_, err = io.Copy(h, f)
+// 	if err != nil { /*エラー処理*/ }
+// 	fmt.Printf("%x\n", h.Sum(nil))
+// }
+
+// io.ReadAllを使って、ファイルの全読み込み
+// func UpperCount(r io.Reader) (count int, _ error) {
+// 	b, err := io.ReadAll(r)
+// 	if err != nil { return 0, err }
+// 	for len(b) > 0 {
+// 		r, size := utf8.DecodeRune(b)
+// 		b = b[size:]
+// 		if r != utf8.RuneError && unicode.IsUpper(r) { count++ }
+// 	}
+// 	return count, nil
+// }
